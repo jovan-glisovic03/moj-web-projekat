@@ -77,7 +77,7 @@ if ($telefon == '') {
                     <input type="text" name="nova_sifra" value="<?php echo $podaci['Sifra']; ?>">
 					<label>Adresa:</label>
                     <input type="text" name="nova_adresa" value="<?php echo $podaci['Adresa']; ?>">
-                    <label>Slika:</label>
+                    
 
 
                     <button type="submit" name="sacuvaj" class="submit-btn">Sačuvaj</button>
