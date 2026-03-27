@@ -1,0 +1,680 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffe477;
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start;
+    padding: 0; 
+    margin: 0;
+    min-height: 100vh;
+}
+
+
+.page-container {
+    width: 100%;
+    max-width: 1200px;
+    border: 2px solid;
+    background-color: #ffffa8;
+    display: flex;
+    flex-direction: column;
+}
+
+.header, .navbar, .footer {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 0;
+}
+
+.header {
+    text-align: center;
+    background-color: #ffffda;
+}
+
+.navbar {
+    background-color: #aa6e49;
+    position: relative;
+    color: white;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+/* mobilni */
+.toggle-label {
+    display: none;
+    cursor: pointer;
+    font-size: 26px;
+    padding: 5px 10px;
+    text-align: right;
+}
+
+.navbar > ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar > ul > li {
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+}
+
+.dropdown-menu {
+    list-style: none;
+    display: none;
+    position: absolute;
+    top: 100%;
+    min-width: 200px;
+    background-color: #aa6e49;
+    padding: 0;
+    z-index: 1000; 
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid;
+}
+
+.dropdown-menu a {
+    padding: 10px;
+    color: white;
+}
+
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+.footer {
+    text-align: center;
+    font-size: 15px;
+    color: #666;
+    border-top: 1px solid #ddd;
+    border-bottom: none;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 10px;
+    padding: 10px;
+    height: 600px;
+    flex-grow: 1;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid #ccc;
+    padding: 0;
+    background-color: #fff;
+}
+
+.box h2, .form-box h2 {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+.form-box1 h2 {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.box .content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+.content ul li {
+	margin-bottom:20px;
+}
+
+
+.partija-list {
+    list-style-position: inside;
+    padding-left: 24px;
+    margin-left: 24px;
+    margin-top: 6px;
+}
+
+.partija-list li {
+    margin: 4px 0;
+	padding:5px;
+}
+
+.partija-list a {
+    text-decoration: none;
+    color: #0066cc;
+}
+
+.partija-list a:hover {
+    text-decoration: underline;
+}
+
+
+.form-wrapper {
+    display: flex;
+    justify-content: center; 
+    align-items: center;      
+    padding: 10px;
+    height: 600px;
+    flex-grow: 1;
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    height: auto; 
+    border: 1px solid #ccc;
+    padding: 0;
+    background-color: #fff;
+    max-width: 550px; 
+    width: 100%;
+}
+
+.form-wrapper1 {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start;
+    padding: 20px 10px;       
+    min-height: 450px;        
+    height: auto;
+    flex-grow: 1;
+}
+
+.form-box1 {
+    display: flex;
+    flex-direction: column;
+    height: auto; 
+    border: 1px solid #ccc;
+    padding: 0;
+    background-color: #fff;
+    max-width: 800px; 
+    width: 100%;
+}
+
+.form-box .content {
+    flex-grow: 0; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 400px; 
+    position: static;
+    margin: 0 auto; 
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+}
+
+.form-row label {
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.form-row input[type="text"],
+.form-row input[type="number"],
+.form-row input[type="file"],
+.form-row select,
+.form-row textarea {
+    padding: 5px;
+    font-size: 14px;
+}
+
+.buttons-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.buttons-row button {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+
+/* MOBILNI UREĐAJI */
+
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 0px 10px 10px 10px;
+    }
+
+    .page-container {
+        width: 100%;
+        border: none;
+    }
+
+    .toggle-label {
+        display: block;
+    }
+
+    .navbar > ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar > ul > li {
+        width: 100%;
+        border-bottom: 1px solid #0097a7;
+    }
+
+    .dropdown {
+        position: static;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        background-color: #aa6e49;
+        padding-left: 15px;
+    }
+
+    .nav-toggle:checked + .toggle-label + ul {
+        display: flex;
+    }
+
+    .wrapper, .form-wrapper { 
+        display: block;
+        height: auto;
+        padding: 5px;
+    }
+    
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .box, .form-box {
+        width: 100%;
+        margin-bottom: 10px;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .box .content, .form-box .content {
+        max-height: 400px;
+        flex-grow: 0;
+        justify-content: flex-start; 
+    }
+}
+/* ============================================================= */
+/* GLOBAL — RADIO BUTTONI & PANEL SISTEM                         */
+/* ============================================================= */
+
+.level1-radio,
+.level2-radio {
+    display: none;
+}
+
+.panel-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.panel.left,
+.panel.middle,
+.panel.right {
+    width: 100%;
+    padding: 15px 5px;
+    box-sizing: border-box;
+}
+
+.panel.middle .m,
+.panel.right .r,
+.analiza-rezultata .rez {
+    display: none;
+}
+
+
+.level1-radio ~ .panel-container .left {
+    display: block;
+}
+
+/* ============================================================= */
+/* NIVO 1 — Dugmad (Opštine / Analitičari / Gradovi)             */
+/* ============================================================= */
+
+.partija-list label,
+.panel.left label {
+    display: inline-block;
+    padding: 8px 14px;
+    background: #ffffff;
+    border: 2px solid #aa6e49;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.25s;
+    margin-bottom: 10px;
+}
+
+.partija-list label:hover,
+.panel.left label:hover {
+    background: #aa6e49;
+    color: white;
+}
+
+/* Aktivno dugme nivoa 1 */
+#bg:checked  ~ .panel-container .left label[for="bg"],
+#ns:checked  ~ .panel-container .left label[for="ns"],
+#nis:checked ~ .panel-container .left label[for="nis"],
+#kg:checked  ~ .panel-container .left label[for="kg"],
+#a1:checked ~ .panel-container .left label[for="a1"],
+#a2:checked ~ .panel-container .left label[for="a2"],
+#a3:checked ~ .panel-container .left label[for="a3"],
+#g_bg:checked ~ .panel-container .left label[for="g_bg"],
+#g_ns:checked ~ .panel-container .left label[for="g_ns"],
+#g_nis:checked~ .panel-container .left label[for="g_nis"],
+#g_kg:checked ~ .panel-container .left label[for="g_kg"],
+#g_su:checked ~ .panel-container .left label[for="g_su"] {
+    background: #aa6e49;
+    color: white;
+}
+
+/* ============================================================= */
+/* NIVO 2 — Dugmad (Kontrolori / Izborna mesta / Gradovi)        */
+/* ============================================================= */
+
+.panel.middle label {
+    display: inline-block;
+    padding: 8px 14px;
+    background: #ffffff;
+    border: 2px solid #aa6e49;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: 0.25s;
+}
+
+.panel.middle label:hover {
+    background: #aa6e49;
+    color: white;
+}
+
+/* Aktivan nivo 2 */
+#bg1:checked  ~ .panel-container .middle label[for="bg1"],
+#bg2:checked  ~ .panel-container .middle label[for="bg2"],
+#ns1:checked  ~ .panel-container .middle label[for="ns1"],
+#nis1:checked ~ .panel-container .middle label[for="nis1"],
+#kg1:checked  ~ .panel-container .middle label[for="kg1"],
+#m1:checked   ~ .panel-container .middle label[for="m1"],
+#m2:checked   ~ .panel-container .middle label[for="m2"],
+#m3:checked   ~ .panel-container .middle label[for="m3"],
+#bgm1:checked ~ .panel-container .middle label[for="bgm1"],
+#nsm1:checked ~ .panel-container .middle label[for="nsm1"],
+#nism1:checked~ .panel-container .middle label[for="nism1"],
+#kgm1:checked ~ .panel-container .middle label[for="kgm1"] {
+    background: #6b4932;
+    color: white;
+}
+
+/* ============================================================= */
+/* NIVO 2 — Prikaz sadržaja                                      */
+/* ============================================================= */
+
+/* Opštine → kontrolori */
+#bg:checked  ~ .panel-container .middle .bg,
+#ns:checked  ~ .panel-container .middle .ns,
+#nis:checked ~ .panel-container .middle .nis,
+#kg:checked  ~ .panel-container .middle .kg {
+    display: block;
+}
+
+/* Analitičari → izborna mesta (rezultati analitičara) */
+#a1:checked ~ .panel-container .middle .a1,
+#a2:checked ~ .panel-container .middle .a2,
+#a3:checked ~ .panel-container .middle .a3 {
+    display: block;
+}
+
+/* Prikaz naslova nivoa 2 */
+.panel.middle h3 {
+    display: none;
+}
+
+/* Prikaz naslova "Rezultati kontrolora" u Nove provere */
+#np1:checked ~ .panel-container .right h3,
+#np2:checked ~ .panel-container .right h3,
+#np3:checked ~ .panel-container .right h3,
+#np4:checked ~ .panel-container .right h3 {
+    display: block !important;
+}
+
+#bg:checked  ~ .panel-container .middle h3,
+#ns:checked  ~ .panel-container .middle h3,
+#nis:checked ~ .panel-container .middle h3,
+#kg:checked  ~ .panel-container .middle h3,
+#a1:checked  ~ .panel-container .middle h3,
+#a2:checked  ~ .panel-container .middle h3,
+#a3:checked  ~ .panel-container .middle h3 {
+    display: block;
+}
+
+/* ============================================================= */
+/* NIVO 3 — REZULTATI                                            */
+/* ============================================================= */
+
+/* Sakrij naslov dok nije izabrano */
+.panel.right h3 {
+    display: none;
+}
+
+/* Aktivacija naslova Rezultati */
+#bg1:checked  ~ .panel-container .right h3,
+#bg2:checked  ~ .panel-container .right h3,
+#ns1:checked  ~ .panel-container .right h3,
+#nis1:checked ~ .panel-container .right h3,
+#kg1:checked  ~ .panel-container .right h3,
+#m1:checked   ~ .panel-container .right h3,
+#m2:checked   ~ .panel-container .right h3,
+#m3:checked   ~ .panel-container .right h3,
+#bgm1:checked ~ .panel-container .right h3,
+#nsm1:checked ~ .panel-container .right h3,
+#nism1:checked~ .panel-container .right h3,
+#kgm1:checked ~ .panel-container .right h3,
+#g_bg:checked ~ .panel-container .right h3,
+#g_ns:checked ~ .panel-container .right h3,
+#g_nis:checked~ .panel-container .right h3,
+#g_kg:checked ~ .panel-container .right h3,
+#g_su:checked ~ .panel-container .right h3 {
+    display: block;
+}
+
+/* Kontrolori → rezultati */
+#bg1:checked  ~ .panel-container .right .bg1,
+#bg2:checked  ~ .panel-container .right .bg2,
+#ns1:checked  ~ .panel-container .right .ns1,
+#nis1:checked ~ .panel-container .right .nis1,
+#kg1:checked  ~ .panel-container .right .kg1 {
+    display: flex !important;
+}
+
+/* Analitičari → rezultati */
+#m1:checked ~ .panel-container .right .m1,
+#m2:checked ~ .panel-container .right .m2,
+#m3:checked ~ .panel-container .right .m3 {
+    display: flex !important;
+}
+
+/* Ispravni rezultati */
+#bgm1:checked ~ .panel-container .right .bgm1,
+#nsm1:checked ~ .panel-container .right .nsm1,
+#nism1:checked~ .panel-container .right .nism1,
+#kgm1:checked ~ .panel-container .right .kgm1 {
+    display: flex !important;
+}
+
+/* Rezultati po gradovima */
+#g_bg:checked  ~ .panel-container .right .g_bg,
+#g_ns:checked  ~ .panel-container .right .g_ns,
+#g_nis:checked ~ .panel-container .right .g_nis,
+#g_kg:checked  ~ .panel-container .right .g_kg,
+#g_su:checked  ~ .panel-container .right .g_su {
+    display: flex !important;
+}
+
+/* ============================================================= */
+/* Dugme Rezultat                                                */
+/* ============================================================= */
+
+.rez-label,
+.panel.right .r p {
+    display: inline-block;
+    padding: 8px 14px;
+    background: white;
+    border: 2px solid #3a3a3a;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .25s;
+    margin-top: -5px;
+    margin-left: 20px;
+}
+
+.rez-label:hover,
+.panel.right .r p:hover {
+    background: #3a3a3a;
+    color: white;
+}
+
+/* ============================================================= */
+/* KONTROLA ANALITIČARA — PRIKAZ UNOSA                           */
+/* ============================================================= */
+
+#an1:checked ~ .content .analiza-rezultata .an1,
+#an2:checked ~ .content .analiza-rezultata .an2,
+#an3:checked ~ .content .analiza-rezultata .an3 {
+    display: block !important;
+}
+
+.analiza-rezultata h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.analiza-rezultata .rez {
+    padding: 10px;
+    border: 2px solid #6b4932;
+    border-radius: 8px;
+    margin-top: 10px;
+    background: #fff8f2;
+}
+
+/* ============================================================= */
+/* Ujednačavanje UL listi                                        */
+/* ============================================================= */
+
+.panel.left ul,
+.panel.middle ul {
+    padding-left: 20px !important;
+    margin-left: 0 !important;
+}
+
+.form-box1 .panel-container {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* ============================================================= */
+/* KONTROLA ANALITIČARA — prikaz unosa po analitičaru */
+/* ============================================================= */
+
+/* sakrij sve unose dok nije kliknuto */
+.analiza-rezultata .rez {
+    display: none;
+}
+
+/* prikaz za analitičara 1 */
+#an1:checked ~ .analiza-rezultata .an1 {
+    display: block;
+}
+
+/* prikaz za analitičara 2 */
+#an2:checked ~ .analiza-rezultata .an2 {
+    display: block;
+}
+
+/* prikaz za analitičara 3 */
+#an3:checked ~ .analiza-rezultata .an3 {
+    display: block;
+}
+
+/* Nove provere – prikaz rezultata */
+#np1:checked ~ .panel-container .right .np1,
+#np2:checked ~ .panel-container .right .np2,
+#np3:checked ~ .panel-container .right .np3,
+#np4:checked ~ .panel-container .right .np4 {
+    display: flex !important;
+    gap: 15px;
+    align-items: center;
+}
+
+.panel.right .r p a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #6b4932;
+}
+
+.panel.right .r p a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================================= */
+/* AŽURIRAJ PROVERE — prikaz rezultata + zapisnika               */
+/* ============================================================= */
+
+/* Prikaži rezultate za izabrano izborno mesto */
+#az1:checked ~ .panel-container .right .az1,
+#az2:checked ~ .panel-container .right .az2,
+#az3:checked ~ .panel-container .right .az3 {
+    display: flex !important;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Prikaži naslov Rezultati samo kada je neko mesto izabrano */
+#az1:checked ~ .panel-container .right h3,
+#az2:checked ~ .panel-container .right h3,
+#az3:checked ~ .panel-container .right h3 {
+    display: block;
+}
+
+/* Link ka zapisniku — stil */
+.panel.right .r p a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #6b4932;
+}
+
+.panel.right .r p a:hover {
+    text-decoration: underline;
+} 
